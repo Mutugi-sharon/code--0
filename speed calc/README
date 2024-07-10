@@ -1,0 +1,31 @@
+
+Speed Checker Web Application
+This is a simple web application that allows users to check the speed of a car and determine if any demerit points should be applied, based on predefined rules.
+
+Features
+Input: Users can enter the speed of the car in kilometers per hour (km/h) using an input field.
+Validation: The input field ensures that only numeric values are accepted and that the value entered is required (cannot be empty).
+Checking Speed: Upon clicking the "Check Speed" button, the application evaluates the entered speed against a  speed limit OF(70 km/h).
+Outcome Display:
+If the entered speed is less than the speed limit (70 km/h), it displays "Ok".
+If the entered speed exceeds the speed limit, it calculates demerit points based on the number of 5 km/h increments over the limit and displays either the number of demerit points or "License suspended" if more than 12 demerit points are passed.
+Responsive Design: The application is designed to be responsive, ensuring usability across different devices and screen sizes.
+Technologies Used
+HTML: Markup language for structuring the web page.
+CSS: Stylesheet language for styling the web page elements.
+JavaScript: Programming language for implementing the logic behind the speed checking functionality.
+Meta Tags: Used for defining character set, viewport settings, and page title.
+Usage
+Entering Speed: Type the speed of the car into the input field (e.g., 80 km/h).
+Checking: Click the "Check Speed" button to evaluate the entered speed.
+Results:
+If the speed is below 70 km/h, it will display "Ok".
+If the speed exceeds 70 km/h, it calculates demerit points and displays either "Points: x" or "License suspended" based on the number of demerit points accrued.
+This web application is open-source under the MIT License. You are free to modify and distribute the code as per the terms of the license.
+
+Author
+Developed by [Steve Mutwiri]
+GitHub: [steve_devops]
+Feel free to enhance this application further by adding more features or improving the user interface as needed.
+
+

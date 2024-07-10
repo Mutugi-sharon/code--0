@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Speed Checker</h2>
+    
+    <div class="input-container">
+        <label for="speedInput">Enter the speed of the car (km/h): </label>
+        <input type="number" id="speedInput" min="0" required>
+        <button onclick="checkSpeed()">Check Speed</button>
+    </div>
+    
+    <p id="result"></p>
+
+    <script>
+        function checkSpeed() {
+            const speedInput = document.getElementById('speedInput').value;
+            const speed = parseInt(speedInput, 10);
+
+            const speedLimit = 70;
+            const pointsPer5KmOver = 1;
+
+            if (speed < speedLimit) {
+                document.getElementById('result').textContent = "Ok";
+            } else {
+                const demeritPoints = Math.floor((speed - speedLimit) / 5);
+
+                if (demeritPoints > 12) {
+                    document.getElementById('result').textContent = "License suspended";
+                } else {
+                    document.getElementById('result').textContent = `Points: ${demeritPoints}`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

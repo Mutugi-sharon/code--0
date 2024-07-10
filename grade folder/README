@@ -1,0 +1,30 @@
+Grade Calculator
+This web page is a simple Grade Calculator that prompts the user to input student marks between 0 and 100. Based on the input, it calculates and displays the corresponding grade using predefined grade ranges.
+
+Features
+Input Field: Users can enter the student's marks in a numeric/number input field constrained between 0 and 100.
+Calculation: Upon clicking the "Calculate Grade" button, the page evaluates the entered marks and determines the grade based on the following ranges:
+A: 80 to 100
+B: 60 to 79
+C: 50 to 59
+D: 40 to 49
+E: Less than 40
+Output: The determined grade is displayed dynamically below the input field in the gradeResult section of the page.
+Technologies Used
+HTML: Provides the structure of the web page, including input fields and result containers.
+CSS: Styles the elements for improved presentation and user experience.
+JavaScript: Implements the logic for evaluating marks and determining the corresponding grade based on predefined conditions.
+Meta Tags: Includes charset and viewport settings for compatibility and responsive design.
+Usage
+Enter Marks: Input the student's marks in the provided field.
+Calculate Grade: Click the "Calculate Grade" button to determine and display the grade corresponding to the entered marks.
+Result Display: The calculated grade (A, B, C, D, or E) will be displayed immediately below the input field.
+
+Notes
+This calculator assumes the input will always be a valid number between 0 and 100.
+Error handling for non-numeric input or values outside the specified range (0-100) is implemented to alert the user with a message.
+The grade ranges (A, B, C, D, E) are defined using simple conditional statements in JavaScript (calculateGrade() function).
+Author
+Developed by Steve mutwiri
+GitHub: steve_devops
+Feel free to modify and expand upon this Grade Calculator as needed for your specific requirements or to enhance its functionality and usability.

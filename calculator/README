@@ -1,0 +1,49 @@
+Net Salary Calculator
+This web page serves as a Net Salary Calculator, allowing users to input their basic salary and benefits to determine their net salary after deductions for tax (PAYE), NHIF, and NSSF.
+
+Features
+Input Fields: Users can enter their basic salary and benefits in separate input fields.
+Calculation: Upon clicking the "Calculate Net Salary" button, the page calculates:
+Gross Salary: Sum of the basic salary and benefits.
+Tax (PAYE): Progressive tax calculation based on predefined rates and thresholds.
+NHIF Deductions: Calculated at a flat rate of 1.5% of the gross salary.
+NSSF Deductions: Calculated at a flat rate of 6% of the gross salary.
+Net Salary: Gross salary minus tax, NHIF deductions, and NSSF deductions.
+Display: Results are displayed in the "Results" section of the page, showing:
+Gross Salary
+Tax (PAYE)
+NHIF Deductions
+NSSF Deductions
+Net Salary
+Technologies Used
+HTML: Provides the structure of the web page, including input fields and result containers.
+CSS: Styles the elements for better presentation and readability.
+JavaScript: Implements the logic for calculating tax, NHIF, NSSF deductions, and updating the results dynamically.
+Meta Tags: Include charset and viewport settings for compatibility and responsive design.
+Usage
+Enter Basic Salary: Input your basic salary in the first input field.
+Enter Benefits: Input any benefits (e.g., allowances) in the second input field.
+Calculate Net Salary: Click the "Calculate Net Salary" button to compute and display the net salary based on the entered values.
+Example
+Input:
+
+Basic Salary: 60000 KES
+Benefits: 10000 KES
+Results:
+
+Gross Salary: 70000 KES
+Tax (PAYE): Calculated based on progressive rates
+NHIF Deductions: 1050 KES (1.5% of 70000)
+NSSF Deductions: 4200 KES (6% of 70000)
+Net Salary: Calculated as Gross Salary minus Tax, NHIF Deductions, and NSSF Deductions
+Notes
+This calculator uses simplified assumptions for tax rates and deductions. Actual rates may vary based on specific tax laws and regulations applicable in your region.
+Ensure to enter valid numeric values in the input fields for accurate calculations.
+For production use, consider enhancing error handling and validation to improve user experience and accuracy.
+Author/credits to
+Developed by Steve Mutwiri
+GitHub: steve_devops
+Feel free to modify and extend this calculator as needed for your specific requirements or to improve its functionality and usability.
+
+
+

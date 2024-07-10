@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Salary Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .input-container {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Net Salary Calculator</h2>
+    
+    <div class="input-container">
+        <label for="basicSalary">Enter Basic Salary:</label>
+        <input type="number" id="basicSalary" min="0" required>
+    </div>
+
+    <div class="input-container">
+        <label for="benefits">Enter Benefits:</label>
+        <input type="number" id="benefits" min="0" required>
+    </div>
+
+    <button onclick="calculateNetSalary()">Calculate Net Salary</button>
+
+    <div class="result-container">
+        <h3>Results</h3>
+        <p><strong>Gross Salary:</strong> <span id="grossSalary"></span></p>
+        <p><strong>Tax (PAYE):</strong> <span id="tax"></span></p>
+        <p><strong>NHIF Deductions:</strong> <span id="nhifDeductions"></span></p>
+        <p><strong>NSSF Deductions:</strong> <span id="nssfDeductions"></span></p>
+        <p><strong>Net Salary:</strong> <span id="netSalary"></span></p>
+    </div>
+
+    <script>
+        function calculateNetSalary() {
+            const basicSalary = parseFloat(document.getElementById('basicSalary').value);
+            const benefits = parseFloat(document.getElementById('benefits').value);
+
+            // Constants for tax rates and thresholds
+            const taxRates = [
+                { min: 0, max: 24000, rate: 0.1 },
+                { min: 24001, max: 32333, rate: 0.25 },
+                { min: 32334, max: 40333, rate: 0.3 },
+                { min: 40334, max: Infinity, rate: 0.35 }
+            ];
+
+            // Calculate Gross Salary
+            const grossSalary = basicSalary + benefits;
+
+            // Calculate Tax (PAYE)
+            let taxableIncome = grossSalary;
+            let tax = 0;
+
+            for (let i = 0; i < taxRates.length; i++) {
+                if (taxableIncome <= 0) {
+                    break;
+                }
+                
+                const rate = taxRates[i].rate;
+                const min = taxRates[i].min;
+                const max = taxRates[i].max;
+
+                if (taxableIncome > max) {
+                    tax += (max - min + 1) * rate;
+                } else {
+                    tax += (taxableIncome - min + 1) * rate;
+                }
+
+                taxableIncome -= (max - min + 1);
+            }
+
+            // Calculate NHIF Deductions (assuming a flat rate for simplicity)
+            const nhifRate = 0.015; // 1.5% of gross salary
+            const nhifDeductions = grossSalary * nhifRate;
+
+            // Calculate NSSF Deductions (assuming a flat rate for simplicity)
+            const nssfRate = 0.06; // 6% of gross salary
+            const nssfDeductions = grossSalary * nssfRate;
+
+            // Calculate Net Salary
+            const netSalary = grossSalary - tax - nhifDeductions - nssfDeductions;
+
+            // Display results
+            document.getElementById('grossSalary').textContent = `KES ${grossSalary.toFixed(2)}`;
+            document.getElementById('tax').textContent = `KES ${tax.toFixed(2)}`;
+            document.getElementById('nhifDeductions').textContent = `KES ${nhifDeductions.toFixed(2)}`;
+            document.getElementById('nssfDeductions').textContent = `KES ${nssfDeductions.toFixed(2)}`;
+            document.getElementById('netSalary').textContent = `KES ${netSalary.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
